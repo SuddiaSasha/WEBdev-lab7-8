@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+.highlight {
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    flex: 3;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    font-size: 1rem;
+}
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer .contacts {
+    margin: 0;
+}
+
+footer .copyright {
+    margin: 0;
+}
+
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.sidebarBottons {
+    display: grid;
+    gap: 10px;
+}
+
+.sidebarBottons ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+
+                                        /* АДАПТИВНИЙ ДИЗАЙН */
+
+/* Для планшетів і менших екранів */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        order: -1;
+        margin-top: 20px;
+    }
+
+    .gallery {
+        order: 1;
+    }
+
+    .inputRange {
+        display: none;
+    }
+
+    .sidebarBottons ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* Для мобільних пристроїв */
+@media (max-width: 730px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        order: -1;
+        margin-top: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .contacts {
+        margin-bottom: 10px;
+    }
+
+    .sidebarBottons ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+
+}
